@@ -86,13 +86,8 @@ char* fspath;
 
 /***********************************************/
 fspath = replace(path);
-
-std::cout <<"Modified path: "<<fspath<<std::endl;
-
 char* destpath = (char *) malloc (strlen(fspath)+6);
 destpath = strcat (fspath,"*.*");
-std::cout <<"Destination path "<<destpath<<std::endl;
-std::cout<<"Destination path length "<<strlen(destpath)<<std::endl;
 dirc (destpath);
 /*********************************************/
 return 0;
