@@ -5,8 +5,6 @@
 #include <sys/stat.h>
 #include <windows.h>
 
-
-/********************************************/
 bool DirectoryExists( const char* absolutePath ){
 
     if( _access( absolutePath, 0 ) == 0 ){
@@ -19,7 +17,6 @@ bool DirectoryExists( const char* absolutePath ){
     return false;
 }
 
-/*******************************************/
 char* replace(const char *s){
 
 char* p = new char[strlen(s)+1];
@@ -41,7 +38,6 @@ int i=0;
 return p;
 }
 
-/*******************************************/
 void dirc (const char* destpath){
 
 HANDLE hFind;
@@ -62,8 +58,6 @@ if((hFind = FindFirstFile(destpath, &FindFileData)) != INVALID_HANDLE_VALUE)
 	}
 }
 
-
-/*******************************************/
 int main(int argc, char**argv) {
 
 const char* path = argv[1];
@@ -84,11 +78,10 @@ char* fspath;
 			return 0;
 			}
 
-/***********************************************/
 fspath = replace(path);
 char* destpath = (char *) malloc (strlen(fspath)+6);
 destpath = strcat (fspath,"*.*");
 dirc (destpath);
-/*********************************************/
+
 return 0;
 }
